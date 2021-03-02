@@ -1,17 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const Card = () => {
-	let stilo = {
-		width: "18rem;"
-	};
+export const Card = props => {
 	return (
 		<div>
-			<div className="card" style={stilo}>
-				<img
-					src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/google-fotos.jpg"
-					className="card-img-top"
-					alt="..."
-				/>
+			<div className="card">
+				<img src={props.enlace} className="card-img-top" alt="..." />
 				<div className="card-body">
 					<h5 className="card-title">Card title</h5>
 					<p className="card-text">
@@ -25,4 +19,8 @@ export const Card = () => {
 			</div>
 		</div>
 	);
+};
+
+Card.propTypes = {
+	enlace: PropTypes.string
 };
